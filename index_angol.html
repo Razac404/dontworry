@@ -2425,7 +2425,7 @@
 		
 		<div id="ign_kezeles_szolg_fooldal" class="szolgaltatasok_item bal" >
 			<div id="szolg1_szoveg" class="szoveg">
-				<div id="szolg1_cim" class="cim"> <h1>Short-term rental listing and management</h1> </div>
+				<div id="szolg1_cim" class="cim"> <h1>Short-term rental </h1> </div>
 				<div id="szolg1_leiras" class="leiras">
 					Our services for converting residential properties into short-term, high-yield rentals are designed <br>to maximize your revenue while minimizing owner responsibilities!
 					<br> <span id="reszletek1" class="reszletek" ><a>more details ➾ </a></span>
@@ -2757,6 +2757,24 @@
 			});
 
 		};
+		const menu = document.getElementById("fomenu");
+
+		function menuAllapotFrissites() {
+			if (window.innerWidth <= 750 && window.scrollY === 0) {
+				menu.classList.add("menu-rejtve");
+			} else {
+				menu.classList.remove("menu-rejtve");
+			}
+		}
+
+		// Oldal betöltéskor
+		menuAllapotFrissites();
+
+		// Scroll eseményre
+		window.addEventListener("scroll", menuAllapotFrissites);
+
+		// Resize esetén (pl. forgatás)
+		window.addEventListener("resize", menuAllapotFrissites);
 		
 		window.addEventListener('scroll', function() {
 			const fomenu = document.getElementById('fomenu');
