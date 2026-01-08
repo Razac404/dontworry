@@ -198,6 +198,11 @@
 		}
 		
 		
+		
+		
+		
+		
+		
 		#ign_kezeles_szolg_fooldal{
 			grid-column: 2;
 			grid-row: 1;
@@ -268,17 +273,10 @@
 			padding: 5px 0px 5px 20px;
 			
 		}
-
+		
 		#szolg1_szoveg{
 			grid-column: 1;
 			grid-row: 1;
-		}
-		
-		.kep img {
-			max-height: 100%;
-			width: auto;
-			display: block;
-			border-radius: 20px;
 		}
 		
 		#szolg1_kep{
@@ -328,11 +326,13 @@
 		
 		
 		
-		.kep{
-			display:flex;
-			align-items: center;
-			justify-content: center;
-			margin: 1px 0px;
+		
+		
+		.kep img {
+			max-height: 100%;
+			width: auto;
+			display: block;
+			border-radius: 20px;
 		}
 		
 		.cim{
@@ -417,7 +417,6 @@
 			
 			margin: 0 auto;
 		}
-		
 		#bemutatkozas h1 {
 			font-size: 2.3rem;
 		}
@@ -439,10 +438,23 @@
 			border-left-color: rgba(80, 150, 240, 0.8);
 		}
 
+		#bemutatkozas p:first-child {
+			font-size: 1.8rem;
+			font-weight: 600;
+			border-left-width: 6px;
+			border-left-color: rgba(80, 150, 240, 0.8);
+		}
+
+		#bemutatkozas p:first-child::first-letter {
+			font-size: 2.5rem;
+			font-weight: 700;
+			float: left;
+			line-height: 0.8;
+			margin-right: 8px;
+			color: rgba(120, 180, 255, 0.9);
+		}
 		
-
-
-
+		
 		#uzenet_iras{
 			display:grid;
 			grid-template-columns: 10% 80% 10%;
@@ -458,7 +470,7 @@
 			grid-column: 2;
 			grid-row: 1;
 			font-size: 1.5rem;
-			line-height: 1.0;
+			line-height: 1.5;
 			margin-top: 5px;
 		}
 		
@@ -492,7 +504,7 @@
 			max-width: 600px;
 			display: flex;
 			flex-direction: column;
-			gap: 10px;
+			gap: 15px;
 			margin-top: 55px;
 		}
 		
@@ -562,7 +574,9 @@
 		
 		
 		#kapcsolat{
-			background:	linear-gradient(135deg, black 40%, #0a1b3f 65%, #0f2a5a 85%, #0a1b3f 100%);
+			background-image: url('contack_bckgrnd4.jpeg');
+			background-size:cover;
+			background-position: right;
 			display:grid;
 			grid-template-columns: 50% 50%;
 			grid-template-rows: 100%;
@@ -636,59 +650,52 @@
 		.gyorsmenupont{
 			cursor: pointer;
 			height: 100%;
-			width: 40%;
+			width: 45%;
 			padding: 2px 5px;
 			margin: 10px 0px;
 			display:grid;
-			grid-template-columns: 25% 75%;
+			grid-template-columns: 22% 75%;
 			grid-template-rows: 45% 55%;
 			/*border:solid white;*/
 			/*background: rgba(255,255,255,0.12);*/
 			border-radius: 20px;
+			
 		}
 		
 		
 		
 		
-		/*
-		.logok_gyors{
-			padding: 20px 0px;
-		}
-		*/
+		
+		
 		
 		#logo1{
 			background-image: url('logo_darkblue.jpg');
 			background-size: 95% auto;
 			background-position: center;
-			background-repeat: no-repeat;
 		}
 		
 		#logo2{
 			background-image: url('logo_darkgreen.jpg');
 			background-size: 95% auto;
 			background-position: center;
-			background-repeat: no-repeat;
 		}
 		
 		#logo3{
 			background-image: url('logo_darkred.jpg');
 			background-size: 95% auto;
 			background-position: center; 
-			background-repeat: no-repeat;
 		}
 		
 		#logo4{
 			background-image: url('logo_lightblue.jpg');
 			background-size: 95% auto;
 			background-position: center;
-			background-repeat: no-repeat;
 		}
 		
 		#logo5{
 			background-image: url('logo_gold.png');
 			background-size: 95% auto;
 			background-position: center;
-			background-repeat: no-repeat;
 		}
 		
 		.cegnevek_gyors{
@@ -721,15 +728,70 @@
 		
 		
 		#kezeles_gyorsmenu{
-			color: #0D47A1;
+			
+			
+		}
+		
+		
+		#cegnev1{
+			background: linear-gradient(180deg, #93C5FD 0%, #60A5FA 20%, #3B82F6 50%, #1E40AF 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+		
+		#szolg1_gyors{
+			background: linear-gradient(180deg, #93C5FD 0%, #60A5FA 20%, #3B82F6 50%, #1E40AF 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
 		}
 		
 		#kivitelezes_gyorsmenu{
-			color: #2E7D32;
+			
+			
+		}
+		
+		
+		#cegnev2{
+			background: linear-gradient(180deg, #22C55E 0%, #16A34A 25%, #15803D 55%, #0F4222 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+		
+		#szolg2_gyors{
+			background: linear-gradient(180deg, #22C55E 0%, #16A34A 25%, #15803D 55%, #0F4222 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
 		}
 		
 		#okosotthon_gyorsmenu{
-			color: #B71C1C;
+			color:darkred;
+			
+		}
+		
+		
+		
+		#cegnev3{
+			 background: linear-gradient(180deg, #FCA5A5 0%, #F87171 15%, #DC2626 35%, #B91C1C 60%, #991B1B 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+		
+		#szolg3_gyors{
+			 background: linear-gradient(180deg, #FCA5A5 0%, #F87171 15%, #DC2626 35%, #B91C1C 60%, #991B1B 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
 		}
 		
 		#takaritás_gyorsmenu{
@@ -737,9 +799,41 @@
 			
 		}
 		
+		#cegnev4{
+			 background: linear-gradient(180deg, #BAE6FD 0%, #7DD3FC 20%, #38BDF8 50%, #00BFFF 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+		
+		#szolg4_gyors{
+			 background: linear-gradient(180deg, #BAE6FD 0%, #7DD3FC 20%, #38BDF8 50%, #00BFFF 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+		
 		#tanacsadas_gyorsmenu{
 			color: #B8860B;
 			
+		}
+		
+		#cegnev5{
+			background: linear-gradient(180deg, #FCD34D 0%, #FBBF24 30%, #B8860B 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
+		}
+		
+		#szolg5_gyors{
+			background: linear-gradient(180deg, #FCD34D 0%, #FBBF24 30%, #B8860B 100%);
+			-webkit-background-clip: text;
+			background-clip: text;
+			-webkit-text-fill-color: transparent;
+			color: transparent;
 		}
 		
 		.reszletek{
@@ -2281,33 +2375,33 @@
 	</style>
 </head>
 <body>
+	
+	
 	<div id="fomenu"> 
-		<div id="logo"> <img src="logo_black.PNG" alt="egymásra csusztatott lakások"> </div>
+		<div id="logo"> <img src="logo_black.PNG" alt="stacked apartments"> </div>
 		<div id="cegnev">ST-Management</div>
 		<div id="toltes_fomenu1"> </div>
-		<div id="fo_oldal" class="menupont" >Főoldal </div>	
-		<div id="ign_kezeles" class="menupont">Ingatlan kezelés </div>
-		<div id="ign_kivitelezes" class="menupont" >Kivitelezés </div>
-		<div id="ign_okosotthon" class="menupont" >Okosotthon </div>
-		<div id="ign_takaritas" class="menupont" >Takarítás </div>
-		<div id="ign_tanacsadas" class="menupont" >Tanácsadás </div>
+		<div id="fo_oldal" class="menupont" >Home</div>	
+		<div id="ign_kezeles" class="menupont" style="width:fit-content;">Property Management</div>
+		<div id="ign_kivitelezes" class="menupont" >Construction</div>
+		<div id="ign_okosotthon" class="menupont" >Smart Home</div>
+		<div id="ign_takaritas" class="menupont" >Cleaning</div>
+		<div id="ign_tanacsadas" class="menupont" >Consulting</div>
 		<div id="toltes_fomenu2"> </div>
-		<div class="nyelv-valaszto" >
+		<div class="nyelv-valaszto">
 			<div class="nyelv-aktiv" id="nyelvToggle">
-				<img src="hungaryan_flag.png" alt="Magyar">
+				<img src="british_flag.png" alt="Hungarian">
 				<span class="arrow"></span>
 			</div>
-
 			<ul class="nyelv-lista">
 				<li onclick="location.href='index.html'">
-					<img src="hungaryan_flag.png" alt="Magyar">
+					<img src="hungaryan_flag.png" alt="Hungarian">
 				</li>
 				<li onclick="location.href='index_angol.html'">
 					<img src="british_flag.png" alt="English">
 				</li>
 			</ul>
 		</div>
-
 	</div>
 	
 	<div id="nyito_oldal" class="video-container">
@@ -2325,17 +2419,16 @@
 	
 	
 	
-	<div id="szolgaltatasok" class="oldal" > 
+	<div id="szolgaltatasok" class="oldal"> 
 	
 		
 		
 		<div id="ign_kezeles_szolg_fooldal" class="szolgaltatasok_item bal" >
 			<div id="szolg1_szoveg" class="szoveg">
-				<div id="szolg1_cim" class="cim"> <h1>Rövid távú kiadás</h1> </div>
+				<div id="szolg1_cim" class="cim"> <h1>Short-term rental listing and management</h1> </div>
 				<div id="szolg1_leiras" class="leiras">
-					Lakóingatlanok rövid távú, magas hozamú bérleményekké alakítását célzó szolgáltatásainkat úgy alakítottuk ki,
-					<br>hogy maximális bevételt biztosítsanak Önnek, miközben minimalizálják a tulajdonosi teendőket.
-					<br> <span id="reszletek1" class="reszletek" ><a>további részletek ➾ </a></span>
+					Our services for converting residential properties into short-term, high-yield rentals are designed <br>to maximize your revenue while minimizing owner responsibilities!
+					<br> <span id="reszletek1" class="reszletek" ><a>more details ➾ </a></span>
 				</div>
 			</div>
 			<div id="szolg1_kep" class="kep"> 
@@ -2345,11 +2438,10 @@
 		
 		<div id="ign_kivitelezes_szolg_fooldal" class="szolgaltatasok_item jobb">
 			<div id="szolg2_szoveg" class="szoveg">
-				<div id="szolg2_cim" class="cim"> <h1>Kivitelezés és felújítás</h1> </div>
+				<div id="szolg2_cim" class="cim"> <h1>Construction and Renovation</h1> </div>
 				<div id="szolg2_leiras" class="leiras">
-					Akár kiadásra készíti elő ingatlanát, akár egy régebbi épület korszerűsítését tervezi,
-					<br>tapasztalt kivitelező csapatunk teljes körű átalakítást kínál!
-					<br> <span id="reszletek2" class="reszletek" ><a>további részletek ➾ </a></span>
+					Whether you're preparing your property for rental or planning to modernize an older building,<br>our experienced construction team offers comprehensive transformation!
+					<br> <span id="reszletek2" class="reszletek" ><a>more details ➾ </a></span>
 				</div>
 			</div>
 			<div id="szolg2_kep" class="kep"> 
@@ -2359,11 +2451,10 @@
 		
 		<div id="ign_okosotthon_szolg_fooldal" class="szolgaltatasok_item bal">
 			<div id="szolg3_szoveg" class="szoveg">
-				<div id="szolg3_cim" class="cim"> <h1>Okosotthon megoldások</h1> </div>
+				<div id="szolg3_cim" class="cim"> <h1>Smart Home Solutions</h1> </div>
 				<div id="szolg3_leiras" class="leiras">
-					Emelje ingatlanát a következő szintre modern okostechnológiákkal, amelyek kényelmesebbé,
-					<br>biztonságosabbá és hatékonyabbá teszik a működtetést!
-					<br> <span id="reszletek3" class="reszletek" ><a>további részletek ➾ </a></span>
+					Elevate your property to the next level with modern smart technologies <br>that make operation more comfortable,safer and more efficient!
+					<br> <span id="reszletek3" class="reszletek" ><a>more details ➾ </a></span>
 				</div>
 			</div>
 			<div id="szolg3_kep" class="kep"> 
@@ -2373,11 +2464,11 @@
 		
 		<div id="ign_takaritás_szolg_fooldal" class="szolgaltatasok_item jobb"> 
 			<div id="szolg4_szoveg" class="szoveg">
-				<div id="szolg4_cim" class="cim"> <h1>Takarítás és mosás</h1> </div>
+				<div id="szolg4_cim" class="cim"> <h1>Cleaning and Laundry</h1> </div>
 				<div id="szolg4_leiras" class="leiras">
-					A tisztaság alapvető fontosságú a vendégek elégedettsége és a pozitív értékelések szempontjából.
-					<br>Saját takarító- és mosodai szolgáltatásunk biztosítja az ingatlanok folyamatosan magas színvonalú tisztaságát.
-					<br> <span id="reszletek4" class="reszletek" ><a>további részletek ➾ </a></span>
+					Cleanliness is essential for guest satisfaction and positive reviews.
+					<br>With our own cleaning and laundry services, every property meets professional hospitality standards!
+					<br> <span id="reszletek4" class="reszletek" ><a>more details ➾ </a></span>
 				</div>
 			</div>
 			<div id="szolg4_kep" class="kep"> 
@@ -2387,11 +2478,11 @@
 		
 		<div id="ign_tanacsadas_szolg_fooldal" class="szolgaltatasok_item bal"> 
 			<div id="szolg5_szoveg" class="szoveg">
-				<div id="szolg5_cim" class="cim"> <h1>Ingatlan tanácsadás</h1> </div>
+				<div id="szolg5_cim" class="cim"> <h1>Property Consulting</h1> </div>
 				<div id="szolg5_leiras" class="leiras">
-					A magyar ingatlanpiacon való eligazodás kihívást jelenthet – ebben nyújtunk személyre szabott 
-					<br>segítséget befektetőknek, tulajdonosoknak és vásárlóknak egyaránt.
-					<br> <span id="részletek5" class="reszletek"><a>további részletek ➾ </a></span>
+					Navigating the Hungarian real estate market can be challenging – we provide personalized 
+					<br>assistance for investors, owners, and buyers alike.
+					<br> <span id="részletek5" class="reszletek"><a>more details ➾ </a></span>
 				</div>
 			</div>
 			<div id="szolg5_kep" class="kep"> 
@@ -2400,65 +2491,60 @@
 		</div>
 	</div>
 	
-	<div id="bemutatkozas" > 
-			
-			<h1 style="align-self:center; justify-self:center;"> Itt teljesebb képet kaphatsz rólunk</h1>
-			
-			<p>Üdvözöljük az ST Managementnél, ahol a stratégiai gondolkodás a gyakorlatban megvalósuló kiválósággal találkozik az ingatlankezelés területén. Teljes körű ingatlankezelési és tanácsadói szolgáltatásokat nyújtó vállalatként elkötelezetten támogatjuk tulajdonosainkat, befektetőinket és bérbeadóinkat abban, hogy megóvják, növeljék és hosszú távon gyarapítsák eszközeik értékét.
-			</p>
-			<p>Cégünknél személyre szabott tanácsadást és szakértői iránymutatást biztosítunk az ingatlantulajdonlás minden szakaszában — a megfelelő befektetés kiválasztásától és a megalapozott vásárlási döntésektől kezdve a napi üzemeltetésen át egészen a hosszú távú értékteremtésig. Szolgáltatásaink közé tartozik az átfogó ingatlankezelés, professzionális takarítás, magas színvonalú felújítások, valamint egyedi eszköz- és vagyonkezelési tanácsadás, amely a teljesítmény és a fenntarthatóság maximalizálását szolgálja.
-			</p>
-			<p>Kifinomult részletekre való odafigyeléssel, az átláthatóság iránti elkötelezettséggel és eredményorientált szemlélettel alakítjuk át az ingatlanokat jól működő, nyereséges és időtálló befektetésekké. Legyen szó első ingatlana megszerzéséről vagy egy sokrétű portfólió optimalizálásáról, az ST Management magabiztosságot, hatékonyságot és kifinomultságot nyújt — hogy eszközei intelligensebben működjenek, erőteljesebben növekedjenek, és hosszú távon is megállják a helyüket.
-			</p>
-			<p>Vállalatunk megbízható partnerként azon dolgozik, hogy az ingatlantulajdonlás gördülékeny, átlátható és valóban értékteremtő élmény legyen. Büszkék vagyunk arra, hogy kivételes ingatlankezelési szolgáltatásokat nyújtunk precizitással, integritással és gondoskodással. Tapasztalt csapatunk minden részletet felügyel — a napi működéstől az eszközök hosszú távú védelméig — biztosítva, hogy minden ingatlan a legmagasabb színvonalon legyen fenntartva.
-			</p>
-			<p>Akár egyetlen ingatlan tulajdonosa, akár növekvő portfóliót kezel, strukturált megoldásokat, eleganciát és nyugalmat biztosítunk befektetése számára, lehetővé téve, hogy Ön arra összpontosítson, ami igazán fontos, miközben mi minden másról gondoskodunk. Megközelítésünk az előrelátó kommunikáción, az egyedi megoldásokon és azon a mély szakmai tudáson alapul, amely szükséges az ingatlanok kifogástalan működtetéséhez — mind funkcionális, mind pénzügyi szempontból.
-			</p>
-			<p>Elkötelezettek vagyunk a hosszú távú kapcsolatok építése mellett, melyeket az átláthatóság, a gyors reagálás és a mérhető eredmények jellemeznek. Ezt a szemléletet tükrözi ügyfeleink bizalma és elégedettsége, akik ránk bízzák befektetéseik védelmét és értékük növelését. Az ST Managementnél az ingatlan nem csupán kezelt — szakértő kezekben van.
-			</p>
-			<p>Csapatunk a kompromisszumok nélküli kiválóságot képviseli. Tapasztalat, precizitás és professzionalizmus köt össze bennünket, miközben közös értékeink az integritás, a diszkréció és az eredményesség. Minden döntésünket stratégiai szemlélet és rendíthetetlen részletorientáltság vezérli, biztosítva, hogy a gondozásunk alatt álló ingatlanok a lehető legmagasabb szinten teljesítsenek.
-			</p>
-			<p>Mi többek vagyunk egyszerű kezelőknél — kiemelkedő kereskedelmi ingatlanok megbízható gondnokai, akik elkötelezettek az érték növelése, a kapcsolatok erősítése és egy olyan szolgáltatási színvonal nyújtása mellett, amely valódi üzleti értékeket tükröz.
-			</p>
-			
+	<div id="bemutatkozas">
+		<h1 style="align-self:center; justify-self:center;">Get a clearer picture of who we are</h1>
+		<p>Welcome to ST Management, where strategic insight meets hands-on excellence in property management. We are a full-service property management and advisory company dedicated to helping owners, investors, and landlords protect, enhance, and grow the value of their assets.</p>
+		<p>At our company, we offer personalized counseling and expert guidance, supporting you through every stage of property ownership — from selecting the right investment and making informed purchase decisions to daily management and long-term value creation.</p>
+		<p>Our services include comprehensive property management, professional cleaning, high-quality renovations, and tailored asset advisory designed to maximize performance and sustainability.</p>
+		<p>With a refined eye for detail, a commitment to transparency, and a results-driven mindset, we transform properties into well-managed, profitable, and enduring investments.</p>
+		<p>Whether you are acquiring your first property or optimizing a diverse portfolio, ST Management delivers confidence, efficiency, and sophistication — so your assets work smarter, grow stronger, and stand the test of time.</p>
+		<p>Our company is a trusted partner dedicated to making ownership effortless and rewarding. We take pride in delivering exceptional property management with precision, integrity, and care.</p>
+		<p>Our experienced team oversees every detail — from daily operations to long-term asset protection — ensuring each property is maintained to the highest standard.</p>
+		<p>Whether you own a single property or a growing portfolio, we bring structure, elegance, and peace of mind to your investment, allowing you to focus on what matters most while we take care of the rest.</p>
+		<p>Our approach is built on proactive communication, customized solutions, and a deep understanding of what it takes to maintain properties at their best — both functionally and financially.</p>
+		<p>We are committed to building lasting relationships through transparency, responsiveness, and results. This dedication has earned us the trust of our clients, who rely on us to protect their investments and enhance long-term value.</p>
+		<p>With ST Management, your property is not just managed — it’s expertly cared for.</p>
+		<p>Our team represents excellence without compromise. United by experience, precision, and professionalism, we operate with a shared commitment to integrity, discretion, and results.</p>
+		<p>Every decision is guided by strategic insight and an unwavering attention to detail, ensuring each property under our care performs at the highest level.</p>
+		<p>We are more than managers — we are trusted stewards of premier commercial assets, dedicated to elevating value, strengthening relationships, and delivering a standard of service that reflects true business values.</p>
 	</div>
-	
+
 	
 	<div id="uzenet_iras" class="oldal"> 
 		<div id="kapcsolat_felirat"> 
-			<span id="arAjanlat" style="white-space: nowrap">Árajánlat kérés</span>
+			<span id="arAjanlat" style="white-space: nowrap">Request a Quote</span>
 			<br>
-			<span id="marCsak" style="white-space: nowrap">Már csak néhány kattintásra vagy a megoldástól ! </span>
+			<span id="marCsak" style="white-space: nowrap">Just a few clicks away from the solution!</span>
 		</div>
 		
 		<div id="formehelye"> 
 			<form id="uzenet_form">
 				<div class="form-group">
-					<label for="nev">Név:</label>
-					<input type="text" id="nev" name="nev" placeholder="teljes név"  required>
+					<label for="nev">Name:</label>
+					<input type="text" id="nev" name="nev" placeholder="full name"  required>
 				</div>
 				
 				<div class="form-group">
-					<label for="kapcsolatInfo">Kapcsolattartási információ:</label>
-					<input type="text" id="kapcsolatInfo" name="kapcsolatInfo" placeholder="email és telefon" required>
+					<label for="kapcsolatInfo">Contact Information:</label>
+					<input type="text" id="kapcsolatInfo" name="kapcsolatInfo" placeholder="email and phone" required>
 				</div>
 				
 				<div class="form-group">
-					<label for="cime">Cím:</label>
-					<input type="text" id="cime" name="cime" placeholder="ingatlan címe" required>
+					<label for="cime">Address:</label>
+					<input type="text" id="cime" name="cime" placeholder="property address" required>
 				</div>
 				
 				<div class="form-group">
-					<label for="alapterulet">Alapterület (m²):</label>
-					<input type="text" id="alapterulet" name="alapterulet" placeholder="ingalan alapterülete" required>
+					<label for="alapterulet">Floor Area (m²):</label>
+					<input type="text" id="alapterulet" name="alapterulet" placeholder="property floor area" required>
 				</div>
 				
 				<div class="form-group">
-					<label for="uzenet">Üzenet:</label>
-					<textarea id="uzenet" name="uzenet" placeholder="kérem, ide írja az üzenetét" required></textarea>
+					<label for="uzenet">Message:</label>
+					<textarea id="uzenet" name="uzenet" placeholder="please write your message here" required></textarea>
 				</div>
 				
-				<button type="submit">Üzenet küldése</button>
+				<button type="submit">Send Message</button>
 			</form>
 		</div>
 	</div>
@@ -2472,7 +2558,7 @@
 					<div id="logo1" class="logok_gyors" style="grid-column:1; grid-row:1/3"> </div>
 
 					<div id="cegnev1" class="cegnevek_gyors" style="grid-column:2; grid-row:1;"> ST-Managment </div>
-					<div id="szolg1_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Rövid távú kiadás</div>
+					<div id="szolg1_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Short-term rental</div>
 
 				 </div>
 				 
@@ -2480,7 +2566,7 @@
 					<div id="logo2" class="logok_gyors" style="grid-column:1; grid-row:1/3"> </div>
 
 					<div id="cegnev2" class="cegnevek_gyors" style="grid-column:2; grid-row:1; "> ST-Managment </div>
-					<div id="szolg2_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Kivitelezés és felújítás</div>
+					<div id="szolg2_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Construction and Renovation</div>
 					
 				 </div>
 				 
@@ -2488,7 +2574,7 @@
 					<div id="logo3" class="logok_gyors" style="grid-column:1; grid-row:1/3"> </div>
 
 					<div id="cegnev3" class="cegnevek_gyors" style="grid-column:2; grid-row:1; "> ST-Managment </div>
-					<div id="szolg3_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Okosotthon megoldások</div>
+					<div id="szolg3_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Smart Home Solutions</div>
 
 				 </div>
 				 
@@ -2496,7 +2582,7 @@
 					<div id="logo4" class="logok_gyors" style="grid-column:1; grid-row:1/3"> </div>
 					
 					<div id="cegnev4" class="cegnevek_gyors" style="grid-column:2; grid-row:1; "> ST-Managment </div>
-					<div id="szolg4_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Takarítás és mosás </div>
+					<div id="szolg4_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Cleaning and Laundry</div>
 					
 				</div>
 
@@ -2504,7 +2590,7 @@
 					<div id="logo5" class="logok_gyors" style="grid-column:1; grid-row:1/3"> </div>
 					
 					<div id="cegnev5" class="cegnevek_gyors" style="grid-column:2; grid-row:1;"> ST-Managment </div>
-					<div id="szolg5_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Ingatlan tanácsadás </div>
+					<div id="szolg5_gyors" class="szolgaltatasok_gyors" style="grid-column:2; grid-row:2;">Property Consulting </div>
 					
 				</div>
 				
@@ -2569,70 +2655,70 @@
 		const linkek=[
 		{
 			azon:"fo_oldal",
-			destinat:"index.html"
+			destinat:"index_angol.html"
 		},
 		{
 			azon:"ign_kezeles",
-			destinat:"kezeles.html"
+			destinat:"kezeles_angol.html"
 		},
 		{
 			azon:"reszletek1",
-			destinat:"kezeles.html"
+			destinat:"kezeles_angol.html"
 		},
 		{
 			azon:"kezeles_gyorsmenu",
-			destinat:"kezeles.html"
+			destinat:"kezeles_angol.html"
 		},		
 		{
 			azon:"ign_kivitelezes",
-			destinat:"kivitelezes.html"
+			destinat:"kivitelezes_angol.html"
 		},
 		{
 			azon:"reszletek2",
-			destinat:"kivitelezes.html"
+			destinat:"kivitelezes_angol.html"
 		},
 		{
 			azon:"kivitelezes_gyorsmenu",
-			destinat:"kivitelezes.html"
+			destinat:"kivitelezes_angol.html"
 		},
 		
 		{
 			azon:"ign_okosotthon",
-			destinat:"okosotthon.html"
+			destinat:"okosotthon_angol.html"
 		},
 		{
 			azon:"reszletek3",
-			destinat:"okosotthon.html"
+			destinat:"okosotthon_angol.html"
 		},
 		{
 			azon:"okosotthon_gyorsmenu",
-			destinat:"okosotthon.html"
+			destinat:"okosotthon_angol.html"
 		},
 		
 		{
 			azon:"ign_takaritas",
-			destinat:"takaritas.html"
+			destinat:"takaritas_angol.html"
 		},
 		{
 			azon:"reszletek4",
-			destinat:"takaritas.html"
+			destinat:"takaritas_angol.html"
 		},
 		{
 			azon:"takaritás_gyorsmenu",
-			destinat:"takaritas.html"
+			destinat:"takaritas_angol.html"
 		},
 		
 		{
 			azon:"ign_tanacsadas",
-			destinat:"tanacsadas.html"
+			destinat:"tanacsadas_angol.html"
 		},
 		{
 			azon:"reszletek5",
-			destinat:"tanacsadas.html"
+			destinat:"tanacsadas_angol.html"
 		},
 		{
 			azon:"tanacsadas_gyorsmenu",
-			destinat:"tanacsadas.html"
+			destinat:"tanacsadas_angol.html"
 		}
 		];
 		let aktualisIndex = 0;
@@ -2671,25 +2757,7 @@
 			});
 
 		};
-		const menu = document.getElementById("fomenu");
-
-		function menuAllapotFrissites() {
-			if (window.innerWidth <= 750 && window.scrollY === 0) {
-				menu.classList.add("menu-rejtve");
-			} else {
-				menu.classList.remove("menu-rejtve");
-			}
-		}
-
-		// Oldal betöltéskor
-		menuAllapotFrissites();
-
-		// Scroll eseményre
-		window.addEventListener("scroll", menuAllapotFrissites);
-
-		// Resize esetén (pl. forgatás)
-		window.addEventListener("resize", menuAllapotFrissites);
-
+		
 		window.addEventListener('scroll', function() {
 			const fomenu = document.getElementById('fomenu');
 			const logo = document.getElementById('logo');
