@@ -823,6 +823,10 @@
 		
 		
 		@media screen and (max-height: 700px) and (max-width: 750px){
+			#fomenu.menu-rejtve{
+				transform: translateY(-100%);
+			}
+			
 			.overlay {
 				font-size: 1.9rem;
 			}
@@ -966,6 +970,9 @@
 				margin-top: -10px;
 				
 			}
+			
+			
+			
 			.reszletek{
 				padding: 5px;
 			}
@@ -2657,7 +2664,25 @@
 			});
 
 		};
-		
+		const menu = document.getElementById("fomenu");
+
+		function menuAllapotFrissites() {
+			if (window.innerWidth <= 750 && window.scrollY === 0) {
+				menu.classList.add("menu-rejtve");
+			} else {
+				menu.classList.remove("menu-rejtve");
+			}
+		}
+
+		// Oldal betöltéskor
+		menuAllapotFrissites();
+
+		// Scroll eseményre
+		window.addEventListener("scroll", menuAllapotFrissites);
+
+		// Resize esetén (pl. forgatás)
+		window.addEventListener("resize", menuAllapotFrissites);
+
 		window.addEventListener('scroll', function() {
 			const fomenu = document.getElementById('fomenu');
 			const logo = document.getElementById('logo');
