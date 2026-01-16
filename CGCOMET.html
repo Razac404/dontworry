@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>CGCOMET</title>
+	<style>
+	
+		*{
+		padding: 0;
+		margin: 0;
+		box-sizing: border-box;
+		
+		}
+		
+		html{
+			font-family: 'Helvetica Neue','Segoe UI',  Helvetica, Tahoma, Arial, sans-serif;
+			zoom: 1;
+			
+		}
+		
+		
+		h1{
+			font-family: Bell MT;
+			font-size: 3.5rem;
+			letter-spacing: 0.04em;
+		}
+		
+		.oldal{
+			height: 80vh;
+			width: 100%;
+			position: relative;
+			display: flex;
+			align-items: center;
+			
+		}
+		
+		.toltesek {
+			height: 100px;
+			width: 100%;
+			background: black;
+		}
+		
+		.toltesek img{
+			height: 100px;
+			width: auto;
+		}
+		
+		#toltes{
+			background: black;
+			height: 100px;
+			width: 100%;
+			z-index: 1;
+		}
+		
+		#fomenu{
+			background: black;
+			height: 100px;
+			width: 100%;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: center;
+			position: fixed;
+			z-index: 1000;
+			padding: 0 20px;
+			color: white;
+			font-size: 1.1rem;
+			background: rgba(0, 0, 0, 0.2);
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			border: 2px solid rgba(184, 76, 255, 0.25);
+		}
+		
+		#logo{
+			display: flex;
+			
+		}
+		
+		#logo img{
+			height: 100px;
+			width: auto;
+			
+		}
+
+		#menupontok{
+			display: flex;
+			flex-direction: row;
+			gap: 100px;
+			position: absolute;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		
+		.menupont{
+			white-space: nowrap;
+			cursor: pointer;
+		}
+		
+		
+		#nyelvCsere{
+			width: 100px;
+			display: flex;
+			flex-direction: row;
+			margin-left: auto;
+			border: 1px solid white;
+			text-align: center;
+			justify-content: center;
+			padding: 5px 10px;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		
+		#rolunk_hatter{
+			
+			background-image: url('0004.png');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeatbackground: black;
+			position: relative;
+			overflow: hidden;	
+		}
+		
+		#rolunk_hatter video{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			object-fit: cover;
+			object-position: 60% center;
+			z-index: 0;
+		}
+		#rolunk{
+			width: 40%;
+			margin-left: 5%;
+			z-index: 10;  
+			position: relative;
+			top: 0; 
+			left: 0;
+			padding: 40px;
+			border-radius: 20px;
+			color: white;  
+			background: rgba(0, 0, 0, 0.6); 
+			backdrop-filter: blur(10px);
+			-webkit-backdrop-filter: blur(10px);
+			font-size: 1.5rem;
+			
+			
+		}
+		
+		#edication_hatter{
+			background-image: url('education_hatter.png');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		#rovidfilmek_hatter{
+			background-image: url('rovidfilmek_hatter.png');
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		#workshops_hatter{
+			background-image: url('workshops_hatter.png');
+			background-size: cover;
+			background-position: center center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		#future_edication_hatter{
+			background-image: url('education_hatter.png');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		#tMate_hatter{
+			background-image: url('tMate_hatter.jpg');
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			z-index: 1;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		
+		@property --angle {
+			syntax: "<angle>";
+			initial-value: 0deg;
+			inherits: false;
+		}
+
+		.tartalom {
+			height: 80%;
+			width: 80vw;
+			padding: 50px;
+			border-radius: 20px;
+			color: white;  
+			position: relative;
+			display: flex;
+			flex-direction: row;
+			font-size: 1.5rem;
+			background: rgba(0, 0, 0, 0.6);
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);
+			z-index: 10;
+			border: 3px solid transparent; /* Alapból transparent */
+			transition: border-color 1s linear;
+		}
+		
+		.fenycsik.animate {
+			/* Az animáció után (4s késleltetés) megjelenik a border */
+			animation: show-border 1s linear 5.5s forwards;
+		}
+		
+		.fenycsik::before {
+			content: "";
+			position: absolute;
+			inset: -2px;
+			padding: 2px;
+			border-radius: 22px; 
+			
+			background: conic-gradient(
+				from var(--angle) at 50% 50%, 
+				transparent 0%,
+				#b84cff 2%,
+				#ffffff 3%,
+				#b84cff 4%,
+				transparent 6%,
+				
+				/* Szünet */
+				transparent 50%,
+				
+				#b84cff 52%,
+				#ffffff 53%,
+				#b84cff 54%,
+				transparent 56%,
+				
+				/* Záró szakasz */
+				transparent 100%
+			);
+			
+			-webkit-mask: 
+				linear-gradient(#fff 0 0) content-box, 
+				linear-gradient(#fff 0 0);
+			-webkit-mask-composite: xor;
+			mask-composite: exclude;
+			
+			opacity: 0;
+			pointer-events: none; 
+		}
+
+		.fenycsik.animate::before {
+			opacity: 1;
+			animation: rotate-left 5s linear, fade-out 0.5s linear 5s forwards;
+		}
+
+
+		@keyframes rotate-left {
+			from { 
+				--angle: 0deg; 
+			}
+			to { 
+				--angle: -180deg; 
+			}
+		}
+
+		@keyframes fade-out {
+			0% {
+				opacity: 1;
+			}
+			100% {
+				opacity: 0; 
+			}
+		}
+
+		@keyframes show-border {
+			0% {
+				border-color: transparent;
+			}
+			100% {
+				border-color: rgba(184, 76, 255, 0.5); /* Lila border */
+			}
+		}
+
+		.diszites{
+			width: 50%; 
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: start;
+			
+		}
+		
+		.diszites img{
+			height: 350px;
+			width: auto;
+		}
+		
+		.reszletek{
+			background: linear-gradient(
+				135deg,
+				#c45adf 0%,
+				#e06eea 20%,
+				#d95fdd 65%,
+				#ad3fc4 100%
+			);
+			padding: 18px 30px;
+			border-radius: 20px;
+			cursor: pointer;
+			box-shadow:
+				-15px 20px 6px rgba(200, 100, 255, 0.5),
+				-10px 12px 4px rgba(0, 0, 0, 0.4),
+				-4px 3px 1px rgba(0, 0, 0, 0.3);
+			transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+			width: fit-content;
+		}
+		
+		.reszletek:hover{
+			transform: scale(1.05);
+			 box-shadow:
+				-18px 25px 8px rgba(200, 100, 255, 0.6),
+				-12px 15px 6px rgba(0, 0, 0, 0.5),
+				-5px 4px 2px rgba(0, 0, 0, 0.4);
+		}
+		
+		
+		.szoveg{
+			padding-top: 2%;
+			width: 50%; 
+			text-align: center;
+			line-height: 1.4;
+		}
+		
+		/*
+		.hatteresSzoveg, .hatteresSzoveg2{
+			display: inline-block;
+			padding: 5px;
+			background: linear-gradient(135deg, 
+				rgba(255, 200, 255, 0.4) 0%,
+				rgba(255, 170, 255, 0.5) 20%,
+				rgba(255, 140, 255, 0.55) 40%,
+				rgba(255, 120, 255, 0.6) 60%,
+				rgba(255, 140, 255, 0.55) 80%,
+				rgba(255, 170, 255, 0.5) 100%
+			);
+			backdrop-filter: blur(8px);
+			-webkit-backdrop-filter: blur(8px);
+			border-radius: 20px;
+			
+			border: 1px solid rgba(255, 255, 255, 0.1); 
+		}
+
+		.hatteresSzoveg2{
+			padding: 1px 10px;
+		}
+		*/
+		
+		.kepek {
+		  filter:
+			drop-shadow(-15px 20px 6px rgba(200, 100, 255, 0.5))
+			drop-shadow(-10px 12px 4px rgba(0, 0, 0, 0.4))
+			drop-shadow(-4px 3px 1px rgba(0, 0, 0, 0.3));
+		  border-radius: 10px;
+		}
+		
+		#oktatas{
+			transition: opacity 0.5s linear;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+		
+		#future_edication{
+			height: 80%;
+			width: 80vw;
+			z-index: 10;  
+			padding: 10px 50px;
+			border-radius: 20px;
+			color: white;  
+			background: rgba(0, 0, 0, 0.6); 
+			-webkit-backdrop-filter: blur(10px);
+			font-size: 1.5rem;
+			border: solid purple;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			line-height: 1.5;
+			gap: 10px;
+			transition: opacity 0.5s linear;
+			opacity:0;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			margin: auto;
+			pointer-events: none;
+
+		}
+		#future_edication_nyil{
+			position: absolute;
+			top: 20px;
+			left: 20px;
+			z-index: 11;
+			width: 100px;
+			height: 100px;
+			cursor: pointer;
+		}
+		
+		#future_edication_nyil:hover{
+			/*border: 1px solid purple;*/
+		}
+		
+		#future_edication_nyil img{
+			width: 100%;
+			height: auto;
+		}
+
+		#tMate{
+			height: 80%;
+			width: 80vw;
+			z-index: 10;  
+			padding: 5% 8%;
+			border-radius: 20px;
+			color: white;  
+			background: rgba(0, 0, 0, 0.6); 
+			-webkit-backdrop-filter: blur(10px);
+			font-size: 1.5rem;
+			display: grid;
+			grid-template-columns: 50% 50%;
+			grid-template-rows: 100%;
+			text-align: center;
+			line-height: 1.5;
+			gap: 10px;
+			position: relative;  
+			border: 2px solid transparent;  
+			transition: border-color 1s linear;
+		}
+		
+		#tMate img{
+			height: 100%;
+			align-self: center;
+			border-radius: 50%;
+			border: 5px solid #c77bdc;
+		}
+		
+		#tMate_leiras{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		
+		#tMate_reszletek{
+			width: content-fit;
+			margin-top: 5%;
+			
+		}
+		
+		#workshops_bemutatas{
+			height: 80%;
+			width: 80vw;
+			display: flex;
+			flex-direction columns;
+			font-size: 1.5rem;
+			background: rgba(0, 0, 0, 0.6);
+			-webkit-backdrop-filter: blur(10px);
+			backdrop-filter: blur(10px);
+			z-index: 10;
+			border: 3px solid transparent; /* Alapból transparent */
+			transition: border-color 1s linear;
+			color: white;
+			gap: 5px;
+			text-align: center;
+		}
+		.workshopTetel{
+			padding: 10px;
+		}
+		
+		
+		#workshops_bemutatas img{
+			height: 20%;
+			width: auto;
+		}
+		
+	</style>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const tartalomElements = document.querySelectorAll('.fenycsik');
+			const fomenu = document.getElementById('fomenu');
+			
+			function checkElements() {
+				tartalomElements.forEach(element => {
+					const rect = element.getBoundingClientRect();
+					const fomenuBottom = fomenu.getBoundingClientRect().bottom;
+					const tartalomTop = rect.top;
+					
+					// Teljes elem függőlegesen látható-e? (felül és alul is)
+					const isFullyVisibleVertically = rect.top >= 0 && 
+													 rect.bottom <= window.innerHeight;
+					
+					// Ha a tartalom a fomenu alatt van ÉS teljesen látható
+					const isBelowMenu = tartalomTop > fomenuBottom;
+					
+					if (isFullyVisibleVertically && isBelowMenu) {
+						// Csak akkor aktiváljuk, ha még nem aktiválva volt
+						if (!element.classList.contains('animate')) {
+							element.classList.add('animate');
+						}
+					} else {
+						// Ha nem teljesen látható, eltávolítjuk
+						element.classList.remove('animate');
+					}
+				});
+			}
+			
+			// Ellenőrizzük scroll esetén (throttle-elve a teljesítményért)
+			let ticking = false;
+			window.addEventListener('scroll', function() {
+				if (!ticking) {
+					window.requestAnimationFrame(function() {
+						checkElements();
+						ticking = false;
+					});
+					ticking = true;
+				}
+			});
+			
+			// Ellenőrizzük az oldal betöltésekor is
+			checkElements();
+			
+			const bttnOktatasReszletek = document.getElementById('bttn_oktatasReszletek');
+			const oktatas = document.getElementById('oktatas');
+			const future_edication= document.getElementById('future_edication');
+			const future_edication_nyil= document.getElementById('future_edication_nyil');
+			
+			bttnOktatasReszletek.addEventListener('click', function() {
+					oktatas.style.opacity = '0'; // Eltűnik
+					future_edication.style.opacity = '1';
+					future_edication.style.pointerEvents = 'auto';
+				});
+				
+			future_edication_nyil.addEventListener('click', function() {
+					future_edication.style.opacity = '0'; // Eltűnik
+					future_edication.style.pointerEvents = 'none';
+					oktatas.style.opacity = '1';
+					oktatas.style.pointerEvents = 'auto';
+				});
+		});
+		
+		
+</script>
+</head>
+<body>
+
+	<div id="fomenu">
+		<div id="logo"> <img src="logo_HN.png" alt="">	</div>
+		<div id="menupontok">
+			<div class="menupont">rólunk	</div>
+			<div class="menupont"> módszereink	</div>
+			<div  class="menupont"> 3D filmek	</div>
+			<div class="menupont"> workshops	</div>
+			<div class="menupont"> tanáraink	</div>
+			<div class="menupont"> kapcsolat	</div>
+		</div>
+		<div id="nyelvCsere"> ENG	</div>
+	</div>
+	
+	<div id="toltes">
+	</div>
+	
+	<div id="rolunk_hatter" class="oldal">
+		<video id="rolunk_video" autoplay muted loop playsinline>
+			<source src="cg_rolunk_hatter2.mp4" type="video/mp4">
+			A böngésző nem támogatja a videó lejátszást.
+		</video>
+		<div id="rolunk" >
+			CGCOMET – Ahol az ötletek alakot öltenek.
+			<br>
+			<br>Kreatív stúdiónk motorja az ambíció és az innováció. A koncepciótervezéstől a 3D nyomtatáson át a bérgyártásig, szakértő csapatunk az ötleteket kiváló minőségű, kézzelfogható eredményekké formálja. Folyamatosan fejlődünk, és mindig feszegetjük a kreativitás határait.
+			<br>
+			<br>CGCOMET – Az Ön kreatív partnere.
+		</div>
+	</div>
+	
+	
+	
+	<div id="toltes1" class="toltesek">
+		<div> <img src="logo.jpg" alt="">	</div>
+	</div>
+	
+	<div id="edication_hatter" class="oldal">
+		<div id="oktatas" class="tartalom fenycsik">
+				<div class="diszites"> 
+					<img src="education_kalap1.png" alt="" class="kepek">
+					<div id="bttn_oktatasReszletek" class="reszletek"> 
+						további részletek
+					</div> 
+				</div>
+				<div class="szoveg"> 
+					<span class="hatteresSzoveg2"><h1>Oktatás</h1></span>
+					
+					<br><span class="hatteresSzoveg">A tanulás egy utazás, mi pedig azért vagyunk itt, hogy izgalmassá tegyük azt. Könnyen követhető, gyakorlatias oktatást kínálunk a 3D gyártás, az animáció és a tervezés területén. Legyen szó iskolai, online vagy személyes oktatásról, segítünk képességeid és szenvedélyed fejlesztésében egy professzionális, támogató környezetben.</span>
+				</div>
+		</div>
+		<div id="future_edication" >
+			<div id="future_edication_nyil">
+				<img src="balraNyil.png" alt="balra mutató nyíl">
+			</div>
+			<p><h1>Oktatás a jövő alkotóinak</h1>
+			</p>
+			<p>Különféle oktatási lehetőségeket kínálunk diákjainknak a kreatív és technikai területek széles skáláján. Legyen szó programozásról, koncepciótervezésről (concept art), 3D tervezésről, digitális festészetről, webdesignról vagy egyébről, nálunk megtalálod a neked szóló speciális kurzusokat. Az oktatás magyar nyelven zajlik; számos területen elérhető az online tanulás, míg bizonyos tanfolyamokat kizárólag élő, személyes alkalmak keretében tartunk meg. 
+			</p>
+			<p><h2>Miért válassz minket?</h2>
+			<br>Személyre szabott, egyéni mentorálást nyújtunk, amely a valódi készségekre és az iparágban hasznosítható tudásra összpontosít. Tanítványaink nemcsak az egyetemeken állják meg a helyüket, de sokan közülük már sikeres karriert is kezdtek a kreatív iparban. A legjobban teljesítő diákok csatlakozhatnak szakmai projektjeinkhez, és csapatunk tagjaivá válhatnak – így változtatva a tanulást valódi jövővé.
+			</p>
+		</div>
+	</div>
+	
+	<div id="toltes2" class="toltesek">
+		<div> <img src="logo.jpg" alt="">	</div>
+	</div>
+	
+	<div id="rovidfilmek_hatter" class="oldal">
+		<div id="rovidfilmek" class="tartalom fenycsik">
+			<div class="diszites"> 
+				<img src="rovidfilmekF.png" alt="" class="kepek">
+				<div class="reszletek"> 
+					vágjunk bele
+				</div> 
+			</div>
+			<div class="szoveg"> 
+				<span class="hatteresSzoveg2"><h1><span style="font-family:'Libre Baskerville'">3D</span> Rövidfilmek</h1>	</span>
+				
+				<br><span class="hatteresSzoveg">Van egy történeted, amit elmesélnél? Lenyűgöző 3D rövidfilmekkel keltjük életre az elképzeléseidet! A koncepciótól a végső renderelésig csapatunk minden lépést precizitással és kreativitással kezel. Mozgassuk meg az ötleteidet, és érjünk el maradandó hatást!</span>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id="toltes3" class="toltesek">
+		<div> <img src="logo.jpg" alt="">	</div>
+	</div>
+	
+	<div id="workshops_hatter" class="oldal">
+		<div id="workshops" class="tartalom fenycsik">
+			<div class="diszites"> 
+				<img src="workshops.png" alt="" class="kepek">
+				<div class="reszletek"> 
+					vágjunk bele
+				</div> 
+			</div>
+			<div class="szoveg"> 
+				<span class="hatteresSzoveg2"><h1>Workshopok</h1>	</span>
+				
+				<br><span class="hatteresSzoveg">Szeretnéd magasabb szintre emelni a kreatív készségeidet? Workshopjaink segítenek eligazodni a 3D izgalmas világában! Akár kezdő vagy, akár a tudásodat szeretnéd csiszolni, olyan gyakorlatias foglalkozásokat kínálunk, amelyek kihozzák belőled a legjobbat. Csatlakozz hozzánk, és kezdj el magabiztosan alkotni!</span>
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id="toltes4" class="toltesek">
+		<div> <img src="logo.jpg" alt="">	</div>
+	</div>
+	
+	
+	<div id="tMate_hatter" class="oldal">
+		<div id="tMate" class="fenycsik">
+			<div> <img src="tMate.jpg" alt="">	</div>
+			
+			<div id="tMate_leiras">	
+				<p><h1>Tarczali Máté</h1>
+				</p>
+				<p>3D Generalist | Director Máté is not only our lead 3D Generalist but also the Director of the studio. With years of experience in modeling, animation, lighting, and rendering, he guides both students and the company with professionalism and creativity. His classes offer a deep, practical insight into the entire 3D production pipeline.
+				<div id="tMate_reszletek"class="reszletek"> 
+					további részletek
+				</div> 
+			</div>
+			
+		</div>
+	</div>
+	
+	<div id="toltes5" class="toltesek">
+		<div> <img src="logo.jpg" alt="">	</div>
+	</div>
+	
+	<div id="workshops_hatter" class="oldal">
+		<div id="workshops_bemutatas" >
+			<div class="workshopTetel"> 
+				<img src="workshop2.png" alt="" class="kepek">
+				<p>
+					A 3D nyomtatás workshopon, tanulóink megtanulnak egyszerűbb 3D modellezési technikákat, megismerkedhetnek a 3D nyomtatás művészetével, különböző nyomtatók ismeretével, valamint segítünk választani mikor milyen anyagból érdemes elkészíteni a modelleket. A workshop végén az elkészült nyomtatott modellt postai úton eljuttatjuk a résztvevőkhöz.
+				</p>
+			</div>
+			
+			<div class="workshopTetel"> 
+				<img src="workshop3.png" alt="" class="kepek">
+				<p>
+					Textura festő workshopunkon, megtanítjuk a figurafestés legjobb módjait. A résztvevőknek segítünk az ecset választásban, megtanítjuk, airbrush segítségével, hogyan kell a nyers figurát le alapozni. Hozható saját modell, valamit cégünk biztosít modelleket, festéket, ecsetet az érkezőknek. Segítünk a festék választásban valamint az órák alatt mesélünk az árnyékolásról és a szín elméletről.
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div id="toltes7" class="toltesek">
+		<div> <img src="logo.jpg" alt="">	</div>
+	</div>
+	
+</body>
+</html>
+	
